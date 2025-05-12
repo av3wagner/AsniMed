@@ -559,7 +559,7 @@ def render_page_content(pathname):
                 ),
                 html.Iframe(
                     id="my-output",
-                    src=" ",
+                    src="https://asnimednew-86i7ukkxxsjq22umxwp79q.streamlit.app/",
                     style={'width':'99.5%',"height": '875px','display':'inline-block',
                     'backgroundColor': 'white',       
                     'overflow-y':'auto', 'color': 'yellow', "font-size": "1.4rem",
@@ -597,19 +597,11 @@ def update_output_div(input_value):
     Output("my-output", "src"), 
     Input("input", "value"), prevent_initial_call=True)
 
+
 def update_output_div(input_value):
     print(input_value)
-    parent_path = 'modules/programs'
-    file_location=os.path.join(parent_path, input_value) 
-    if file_location.find('.py') > 0:
-        print("Для исполнения выбрана программа: " + file_location)
-        execute_python_file(file_location)
-        print('Программа' + file_location +' закончила работу!')  
-        
-        if input_value == "EDAReportsTestV01.py":    
-            return f"assets/EDA_ChartFinal.html" 
-        elif input_value == "MLReportsMod2025.py":
-            return f"assets/AsNiML_Kurz.html" 
+    return f"https://asnimednew-86i7ukkxxsjq22umxwp79q.streamlit.app/" 
+            
 #Seite 9
        
 if __name__ == "__main__":

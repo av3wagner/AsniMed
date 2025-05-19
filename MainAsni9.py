@@ -278,6 +278,7 @@ def demo_explanation(File):
     )
 
 app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
+server = app.server
 sidebar = html.Div(
     [
         html.Div(
@@ -307,6 +308,7 @@ sidebar = html.Div(
 
 dash._dash_renderer._set_react_version("18.2.0")
 content = html.Div(id="page-content", style=CONTENT_STYLE)
+
 app.title = "RK Asni-Med"
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 

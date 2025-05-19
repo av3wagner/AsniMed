@@ -175,7 +175,7 @@ from time import time, strftime, localtime
 from datetime import timedelta
 import shutil
 from subprocess import Popen, PIPE, STDOUT
-from AppOpener import close
+#from AppOpener import close
 
 path=os.getcwd()
 os.chdir(path)

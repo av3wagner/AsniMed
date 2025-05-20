@@ -606,9 +606,9 @@ def update_output_div(input_value):
         print('Программа' + file_location +' закончила работу!')  
         
         if input_value == "EDAReports2025.py":    
-            return f"assets/ASNIMED-EDA-Voll2025.html" 
+            return f"assets/EDAReports2025.html" 
         elif input_value == "MLReports2025.py":
-            return f"assets/AsNiML_Kurz.html" 
+            return f"assets/MLReports2025.html" 
        
 if __name__ == "__main__":
     app.run_server(debug=False, port=8083, use_reloader=False)   

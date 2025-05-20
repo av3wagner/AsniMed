@@ -111,7 +111,7 @@ x = np.arange(-3,3)
 plt.plot(x)
 fig = plt.gcf()
 img = fig2img(fig)
-img.save(os.path.join(cwd, 'Image/TestPlot.png'))
+img.save(os.path.join(cwd, 'image/TestPlot.png'))
 
 df = pd.read_csv(os.path.join(cwd, "data\heard.csv")) 
 df.rename({'Y': 'target'}, axis=1, inplace=True)

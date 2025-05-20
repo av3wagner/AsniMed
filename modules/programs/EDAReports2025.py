@@ -108,53 +108,9 @@ for feature in numerical:
         
 plt.savefig(pathIm + '/EDA1.png')  
 
-numerical_columns = list(raw_df.loc[:,['Age', 'RestingBP', 'Cholesterol', 'MaxHR', 'Oldpeak', 'HeartDisease']])
-categorical_columns = list(raw_df.loc[:,['Sex', 'ChestPainType', 'FastingBS', 'RestingECG', 'ExerciseAngina', 'ST_Slope']])
-
-# checking boxplots
-def boxplots_custom(dataset, columns_list, rows, cols, suptitle):
-    fig, axs = plt.subplots(rows, cols, sharey=True, figsize=(13,5))
-    fig.suptitle(suptitle,y=1, size=25)
-    axs = axs.flatten()
-    for i, data in enumerate(columns_list):
-        sns.boxplot(data=dataset[data], orient='h', ax=axs[i])
-        axs[i].set_title(data + ', skewness is: '+str(round(dataset[data].skew(axis = 0, skipna = True),2)))
-        
-boxplots_custom(dataset=raw_df, columns_list=numerical_columns, rows=2, cols=3, suptitle='Boxplots for each variable')
-plt.tight_layout()
-plt.savefig(pathIm + '/EDA2.png')
-
-fig, axes = plt.subplots(nrows=3, ncols=2,figsize=(11,17))
-fig.suptitle('Features vs Class\n', size = 18)
-
-sns.boxplot(ax=axes[0, 0], data=raw_df, x='Sex', y='Age', palette='Spectral')
-axes[0,0].set_title("Age distribution");
-
-
-sns.boxplot(ax=axes[0,1], data=raw_df, x='Sex', y='RestingBP', palette='Spectral')
-axes[0,1].set_title("RestingBP distribution");
-
-
-sns.boxplot(ax=axes[1, 0], data=raw_df, x='Sex', y='Cholesterol', palette='Spectral')
-axes[1,0].set_title("Cholesterol distribution");
-
-sns.boxplot(ax=axes[1, 1], data=raw_df, x='Sex', y='MaxHR', palette='Spectral')
-axes[1,1].set_title("MaxHR distribution");
-
-sns.boxplot(ax=axes[2, 0], data=raw_df, x='Sex', y='Oldpeak', palette='Spectral')
-axes[2,0].set_title("Oldpeak distribution");
-
-sns.boxplot(ax=axes[2, 1], data=raw_df, x='Sex', y='HeartDisease', palette='Spectral')
-axes[2,1].set_title("HeartDisease distribution");
-
-plt.tight_layout()
-plt.savefig(pathIm + '/EDA3.png')
-
 #################  Programm-Ende #########################
-#print("Programm Start: ", timestart)
 timeend = datetime.datetime.now()
 date_time = timeend.strftime("%d.%m.%Y %H:%M:%S")
-#print("Programm Finish:",date_time)
 timedelta = round((timeend-timestart).total_seconds(), 2) 
 
 r=(timeend-timestart) 

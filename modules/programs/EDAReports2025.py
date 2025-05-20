@@ -77,7 +77,7 @@ year = today.year
 cwd = os.getcwd()
 
 path=cwd 
-pathIm=os.path.join(cwd, "Image")
+pathIm=os.path.join(cwd, "image")
 print("path: ", path)
 print("pathIm: ", pathIm)
 pd.set_option("display.max_rows",None)
@@ -388,7 +388,7 @@ fig.savefig(pathIm + '/EDA14.png')
 df2 = df.groupby('Sex').agg({'Age' : 'mean', "ChestPainType":'count','RestingBP':'mean','Cholesterol':'mean',
                             'FastingBS':'sum','RestingECG':'count','MaxHR':'mean','ExerciseAngina':'count','Oldpeak':'mean',
                             'ST_Slope':'count','HeartDisease':'sum'})
-df2
+#df2
 fig=px.bar(data_frame=df2, barmode='group',
        title = "<b>Gender wise Analyzing</b>",template="plotly_dark")
 

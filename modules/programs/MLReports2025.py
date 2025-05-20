@@ -136,12 +136,6 @@ def fig2img(fig):
     img = Image.open(buf)
     return img
 
-#x = np.arange(-3,3)
-#plt.plot(x)
-#fig = plt.gcf()
-#img = fig2img(fig)
-#img.save(os.path.join(cwd, 'ImageNow/TestPlot.png'))
-
 df = pd.read_csv(os.path.join(cwd, "data\heard.csv")) 
 df.rename({'Y': 'target'}, axis=1, inplace=True)
 df = df.fillna(0)
@@ -361,7 +355,7 @@ for classifier in classifiers:
         axes[1].set_ylabel("fit_times")
         axes[1].set_title("Scalability of the model")
 
-        figure.savefig(os.path.join(cwd,'ImageNow/plot_learning_curve' + str(i) + '.png'))
+        figure.savefig(os.path.join(cwd,'Image/plot_learning_curve' + str(i) + '.png'))
         ypred   = model.predict(X_test)
          
         if (i==2): 
@@ -423,11 +417,8 @@ for classifier in classifiers:
         plt.ylabel('Sensitivity(True Positive Rate)')
 
         plt.legend(loc="lower right")
-        #fig = plt.gcf()
-        #img = fig2img(fig)
-        fig2.savefig(os.path.join(cwd, 'ImageNow/PlotROC' + str(i) + '.png')) 
-        #img.savefig(os.path.join(cwd, 'ImageNow/PlotROC' + str(i) + '.png')) 
-
+        fig2.savefig(os.path.join(cwd, 'Image/PlotROC' + str(i) + '.png')) 
+       
 i=-1
 plt.style.use('seaborn-v0_8-darkgrid')
 figC = plt.figure(figsize=(16,10))
@@ -486,7 +477,7 @@ for classifier in classifiers:
 
 figC = plt.gcf()
 img = fig2img(figC) 
-img.save(os.path.join(cwd, 'ImageNow/PlotROC.png'))
+img.save(os.path.join(cwd, 'Image/PlotROC.png'))
 
 ############## 6. Speicher der Ergebnisse #################
 metricsnow = pd.DataFrame(metrics_now)
@@ -552,7 +543,7 @@ for x in metrics_now:
     
     img = fig2img(figD) 
     #img.save("assets/PlotE" + str(i) + ".png")
-    img.save(os.path.join(cwd, 'ImageNow/PlotE' + str(i) + '.png'))
+    img.save(os.path.join(cwd, 'Image/PlotE' + str(i) + '.png'))
 
 metrics_main = 2
 xs = metrics_all[metrics_main]

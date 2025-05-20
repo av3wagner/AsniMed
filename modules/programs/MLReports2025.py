@@ -26,7 +26,8 @@
 #;;;*--------------------------------------------------------------*;;;
 #;;;* 20.05.2025        : Neu Version, Bereinigung                 *;;;
 #;;;****************************************************************;;;
-
+from AsniDef import *
+from AsNiDefFa2.py import *
 import os, sys, inspect, time, datetime
 from time import time, strftime, localtime
 import datetime as dt
@@ -108,7 +109,7 @@ def RunEda():
     import time
     time.sleep(2.0)
     
-RunEda()
+#RunEda()
 
 timestart = datetime.datetime.now()
 date_time = timestart.strftime("%d.%m.%Y %H:%M:%S")
